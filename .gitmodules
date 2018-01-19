@@ -1,0 +1,6 @@
+[submodule "nanos6"]
+	path = nanos6
+	url = https://github.com/bsc-pm/nanos6.git
+[submodule "mcxx"]
+	path = mcxx
+	url = https://github.com/bsc-pm/mcxx.git
