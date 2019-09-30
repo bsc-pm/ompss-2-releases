@@ -29,7 +29,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 RUN mkdir -p /usr/local/src/extrae && \
-    curl -SL https://github.com/bsc-performance-tools/extrae/archive/3.7.0.tar.gz \
+    curl -SL https://github.com/bsc-performance-tools/extrae/archive/3.7.1.tar.gz \
     | tar -xzC /usr/local/src/extrae --strip-components=1 && \
     cd /usr/local/src/extrae && \
     ./bootstrap && \
