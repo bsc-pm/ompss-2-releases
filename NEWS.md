@@ -1,6 +1,6 @@
 # OmpSs-2 Release Notes
-All notable changes to the OmpSs-2 model, the Nanos6 runtime system, and the Mercurium source-to-source compiler will
-be documented in this file.
+All notable changes to the OmpSs-2 programming model, the Nanos6 runtime system, and the Mercurium source-to-source
+compiler will be documented in this file.
 
 
 ## Version 2019.06.2, Mon Oct 7, 2019
