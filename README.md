@@ -1,10 +1,11 @@
 # OmpSs-2 Releases
 
-This meta-repository contains the official OmpSs-2 releases.
+This meta-repository contains the official OmpSs-2 programming model's releases.
 
 * OmpSs-2 User Guide: https://pm.bsc.es/ompss-2-docs/user-guide  
 * OmpSs-2 Specification: https://pm.bsc.es/ompss-2-docs/spec  
 * OmpSs-2 Examples: https://pm.bsc.es/gitlab/ompss-2/examples  
+* OmpSs-2 Docker Images: https://hub.docker.com/r/bscpm/ompss-2
 * OmpSs-2 Release Notes: [NEWS.md](./NEWS.md)  
 
 # Getting Started
