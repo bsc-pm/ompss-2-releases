@@ -3,6 +3,30 @@ All notable changes to the OmpSs-2 programming model, the Nanos6 runtime system,
 compiler will be documented in this file.
 
 
+## Version 2019.11, Mon Nov 18, 2019
+The OmpSs-2 2019.11 release introduces a new optimized data dependency implementation. It improves the usability,
+performance and code of the scheduling infrastructure and the `task for` feature. It also adds support for DLB
+and OmpSs-2@Linter.
+
+### General
+- Data dependency implementation can be decided at run-time through `NANOS6_DEPENDENCIES` variable
+- Performance and code improvements on the `task for` feature
+- Add support for Dynamic Load Balancing (DLB) tool
+- Add compiler and runtime support for [OmpSs-2@Linter](https://github.com/bsc-pm/ompss-2-linter)
+- Important bugfix in memory allocator (used by OmpSs-2@Cluster)
+- Bugfixes, performance and code improvements
+
+### Dependency System
+- Add new optimized discrete dependency system implementation; enabled by `NANOS6_DEPENDENCIES=discrete`
+
+### Scheduling
+- Usability, performance and code improvements on the scheduling infrastructure
+
+### Instrumentation
+- Remove profile instrumentation variant
+- Remove interception mechanism of memory allocation functions
+
+
 ## Version 2019.06.2, Mon Oct 7, 2019
 The OmpSs-2 2019.06.2 release introduces some bugfixes.
 

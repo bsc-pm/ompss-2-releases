@@ -12,7 +12,7 @@ This meta-repository contains the official OmpSs-2 programming model's releases.
 
 This repository contains all OmpSs-2 releases stored as *git tags*. These release
 tags are named following the format `YYYY.MM[.PATCH]`, which can be, for instance,
-`2019.06` or `2019.06.2`.
+`2019.11` or `2019.06.2`.
 
 Firstly, clone this repository to your local computer:
 
@@ -25,7 +25,7 @@ After cloning this repository, run the following command to move to a particular
 OmpSs-2 release:
 
 ```
-$ git checkout 2019.06.2
+$ git checkout 2019.11
 ```
 
 Then, run the command below to download the Nanos6 and Mercurium sources in the
