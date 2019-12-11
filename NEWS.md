@@ -3,6 +3,19 @@ All notable changes to the OmpSs-2 programming model, the Nanos6 runtime system,
 compiler will be documented in this file.
 
 
+## Version 2019.11.1, Tue Dec 10, 2019
+The OmpSs-2 2019.11.1 release introduces some bugfixes and performance improvements.
+
+### General
+- Fix execution of CUDA tasks
+- Fix `dmalloc` in OmpSs-2@Cluster
+- Add missing calls to CPU Manager
+- Improve taskfor performance
+- Improve general performance by using a reasonable cache line size padding
+- Add tests checking the execution of CUDA tasks
+- Fix minor issues of Mercurium
+
+
 ## Version 2019.11, Mon Nov 18, 2019
 The OmpSs-2 2019.11 release introduces a new optimized data dependency implementation. It improves the usability,
 performance and code of the scheduling infrastructure and the `task for` feature. It also adds support for DLB
