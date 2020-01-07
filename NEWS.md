@@ -3,6 +3,16 @@ All notable changes to the OmpSs-2 programming model, the Nanos6 runtime system,
 compiler will be documented in this file.
 
 
+## Version 2019.11.2, Wed Jan 8, 2020
+The OmpSs-2 2019.11.2 release introduces some bug fixes.
+
+### General
+- Fix important error at the Nanos6 initialization
+- Fix in discrete dependency system
+- Several fixes for OmpSs-2@Cluster
+- Fix minor issues of Mercurium
+
+
 ## Version 2019.11.1, Tue Dec 10, 2019
 The OmpSs-2 2019.11.1 release introduces some bugfixes and performance improvements.
 
