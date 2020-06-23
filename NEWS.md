@@ -1,6 +1,43 @@
 # OmpSs-2 Release Notes
-All notable changes to the OmpSs-2 programming model, the Nanos6 runtime system, and the Mercurium source-to-source
-compiler will be documented in this file.
+All notable changes to the OmpSs-2 programming model, the Nanos6 runtime system, the Mercurium source-to-source
+compiler, and the OmpSs-2 compiler based on LLVM will be documented in this file.
+
+
+## Version 2020.06, Mon Jun 22, 2020
+The OmpSs-2 2020.06 release introduces several features that improve the general performance of OmpSs-2 applications.
+It adds a new variant to extract execution traces with a lightweight internal tracer. It also improves the support
+for CUDA and provides support for OpenACC tasks. Additionally, it introduces a new compiler for OmpSs-2 programs in
+beta development based on the open-source [LLVM infrastructure](https://www.llvm.org).
+
+### General
+- Use jemalloc as a scalable multi-threading memory allocator
+- Add `turbo` variant enabling floating-point optimizations and the discrete dependency system
+- Refactor of CPU Manager and DLB support improvements
+- Add new OmpSs-2 compiler based on LLVM in beta development supporting several OmpSs-2 features
+- Add support for non-blocking [TAMPI](https://github.com/bsc-pm/tampi) in the LLVM OpenMP runtime system
+- Bugfixes, performance and code improvements
+
+### Scheduling
+- Improve taskfor distribution policy
+- Improve scheduling performance and code infrastructure
+
+### Dependency System
+- Implement the discrete dependency system with lock-free techniques
+- Add support for weak dependencies in discrete
+- Add support for commutative and concurrent dependencies in discrete
+
+### Instrumentation
+- Refactor the hardware counters infrastructure and support both PAPI and PQoS counters
+- Add `ctf` variant to extract execution traces in CTF format using a lightweight internal tracer
+- Provide the `ctf2prv` tool to convert CTF traces to Paraver traces
+- Avoid Extrae trace desynchronizations in hybrid MPI+OmpSs-2 executions
+- Remove the `stats-papi` instrumentation variant
+
+### Devices
+- Refactor of the devices' infrastructure
+- Perform transparent CUDA Unified Memory prefetching
+- Add support for cuBLAS and similar CUDA APIs
+- Add support for OpenACC tasks
 
 
 ## Version 2019.11.2, Wed Jan 8, 2020

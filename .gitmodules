@@ -4,3 +4,6 @@
 [submodule "mcxx"]
 	path = mcxx
 	url = https://github.com/bsc-pm/mcxx.git
+[submodule "llvm"]
+	path = llvm
+	url = https://github.com/bsc-pm/llvm.git
