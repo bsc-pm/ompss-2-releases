@@ -28,9 +28,9 @@ OmpSs-2 release:
 $ git checkout 2019.11
 ```
 
-Then, run the command below to download the Nanos6 and Mercurium sources in the
-`nanos6` and `mcxx` subfolders, respectively. Those sources will be the ones that
-correspond to the previously selected release.
+Then, run the command below to download the Nanos6, Mercurium and LLVM-based compiler
+sources in the `nanos6`, `mcxx` and `llvm` subfolders, respectively. Those sources will
+be the ones that correspond to the previously selected release.
 
 ```
 $ git submodule update --init

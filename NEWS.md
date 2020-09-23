@@ -3,6 +3,22 @@ All notable changes to the OmpSs-2 programming model, the Nanos6 runtime system,
 compiler, and the OmpSs-2 compiler based on LLVM will be documented in this file.
 
 
+## Version 2020.06.1, Tue Sep 21, 2020
+The OmpSs-2 2020.06.1 release introduces some bug fixes and performance improvements.
+
+### General
+- Improve the interface and performance of the Nanos6 scheduler's lock
+- Fix CTF instrumentation bugs and limitations
+- Fix PAPI hardware counters backend
+- Support newer versions of GCC, Clang and GLIBC in Nanos6
+- Fix task external events API
+- Remove preemption mechanism from critical sections
+- Add Nanos6 test suite built with the OmpSs-2 LLVM-based compiler
+- Fix OmpSs-2 `atomic` directive
+- Define `_OMPSS_2` when compiling with the OmpSs-2 LLVM-based compiler
+- Bugfixes, performance and code improvements
+
+
 ## Version 2020.06, Mon Jun 22, 2020
 The OmpSs-2 2020.06 release introduces several features that improve the general performance of OmpSs-2 applications.
 It adds a new variant to extract execution traces with a lightweight internal tracer. It also improves the support
