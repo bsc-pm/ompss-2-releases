@@ -6,13 +6,13 @@ This meta-repository contains the official OmpSs-2 programming model's releases.
 * OmpSs-2 Specification: https://pm.bsc.es/ompss-2-docs/spec  
 * OmpSs-2 Examples: https://pm.bsc.es/gitlab/ompss-2/examples  
 * OmpSs-2 Docker Images: https://hub.docker.com/r/bscpm/ompss-2
-* OmpSs-2 Release Notes: [NEWS.md](./NEWS.md)  
+* OmpSs-2 Release Notes: [NEWS.md](./NEWS.md)
 
 # Getting Started
 
 This repository contains all OmpSs-2 releases stored as *git tags*. These release
 tags are named following the format `YYYY.MM[.PATCH]`, which can be, for instance,
-`2019.11` or `2019.06.2`.
+`2020.11` or `2020.06.1`.
 
 Firstly, clone this repository to your local computer:
 
@@ -25,7 +25,7 @@ After cloning this repository, run the following command to move to a particular
 OmpSs-2 release:
 
 ```
-$ git checkout 2019.11
+$ git checkout 2020.11
 ```
 
 Then, run the command below to download the Nanos6, Mercurium and LLVM-based compiler

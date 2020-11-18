@@ -1,6 +1,36 @@
 # OmpSs-2 Release Notes
 All notable changes to the OmpSs-2 programming model, the Nanos6 runtime system, the Mercurium source-to-source
-compiler, and the OmpSs-2 compiler based on LLVM will be documented in this file.
+compiler, and the OmpSs-2 LLVM-based compiler will be documented in this file.
+
+
+## Version 2020.11, Wed Nov 18, 2020
+The OmpSs-2 2020.11 release introduces several features and fixes that improve general performance. It
+replaces all the configuration environment variables with a configuration file, improving the runtime
+system's usability. Now, the discrete dependency system is the default implementation. Finally, the
+LLVM-based compiler has been extended to support most of OmpSs-2 features.
+
+### General
+- Replace all environment variables with a TOML configuration file
+- Add `NANOS6_CONFIG` environment variable to specify the configuration file
+- Add `NANOS6_CONFIG_OVERRIDE` to override options from the configuration file
+- Enhance performance in architectures with hyperthreading
+- Improve locking performance in the runtime system
+- Optimize memory allocations in the runtime system
+- Add the `assert` declarative directive to check the loaded dependency system
+- Support all OmpSs-2 features in the LLVM-based compiler except device tasks
+- Other bugfixes, performance and code improvements
+
+### Dependency System
+- Make `discrete` the default dependency system
+- Add support for CUDA task reductions in discrete dependencies
+- Improve allocations in discrete dependencies
+
+### Instrumentation
+- Add support for kernel events in CTF instrumentation
+- Add new Paraver views for CTF traces
+
+### Devices
+- Add fixes for OpenACC and CUDA devices
 
 
 ## Version 2020.06.1, Tue Sep 21, 2020
