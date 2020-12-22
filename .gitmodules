@@ -7,3 +7,6 @@
 [submodule "llvm"]
 	path = llvm
 	url = https://github.com/bsc-pm/llvm.git
+[submodule "nanos6-cluster"]
+	path = nanos6-cluster
+	url = https://github.com/bsc-pm/nanos6-cluster.git

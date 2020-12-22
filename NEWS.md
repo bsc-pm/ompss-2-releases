@@ -3,6 +3,22 @@ All notable changes to the OmpSs-2 programming model, the Nanos6 runtime system,
 compiler, and the OmpSs-2 LLVM-based compiler will be documented in this file.
 
 
+## Version 2020.11.1, Tue Dec 22, 2020
+The OmpSs-2 2020.11.1 release introduces bug fixes and code improvements.
+
+### General
+- Efficient support for taskloop dependencies
+- Fix reductions in taskloops and taskfors
+- Fix Fortran reductions in Mercurium
+- Fully implement the `assert` directive
+- Centralize runtime configuration options
+- Abort execution when an unknown runtime configuration option is defined
+- Fix CTF instrumentation issues
+- Unify instrumentation, monitoring and hwcounter points in Nanos6
+- Add stable Nanos6 for OmpSs-2@Cluster at `nanos6-cluster` submodule
+- Bugfixes, performance and code improvements
+
+
 ## Version 2020.11, Wed Nov 18, 2020
 The OmpSs-2 2020.11 release introduces several features and fixes that improve general performance. It
 replaces all the configuration environment variables with a configuration file, improving the runtime
