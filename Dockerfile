@@ -60,6 +60,7 @@ COPY nanos6 /usr/local/src/nanos6
 RUN cd /usr/local/src/nanos6 && \
     autoreconf -fiv && \
     ./configure \
+        --without-papi \
         --with-extrae=/usr/local && \
     make && \
     make install && \
