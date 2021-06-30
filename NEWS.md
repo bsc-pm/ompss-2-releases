@@ -3,6 +3,27 @@ All notable changes to the OmpSs-2 programming model, the Nanos6 runtime system,
 compiler, and the OmpSs-2 LLVM-based compiler will be documented in this file.
 
 
+## Version 2021.06, Wed Jun 30, 2021
+The OmpSs-2 2021.06 release instroduces efficient support in the programming model and the runtime system for
+NUMA systems. It also enhances the taskloop construct to support data dependencies. Now the CTF instrumentation
+supports MPI applications.
+
+### General
+- Add memory allocation API to distribute allocations across NUMA domains and schedule tasks based on that information
+- Add the `onready` task clause to define arbitrary callback functions executed when a task becomes ready
+- Add new `hybrid` CPU manager policy in the runtime that combines both `idle` and `busy` policies
+- Make idle CPUs block inside the scheduler while there are no ready tasks when enabling the `busy` policy
+- Remove polling services API
+- Remove OmpSs-2@Cluster features and code from this runtime system version
+- Remove `nanos6-cluster` submodule; see [OmpSs-2@Cluster Releases](https://github.com/bsc-pm/ompss-2-cluster-releases) for cluster versions
+- Other bugfixes, performance and code improvements
+
+### Instrumentation
+- Add fast CTF trace converter enabled through the runtime config option `instrument.ctf.converter.fast`
+- Add support for multi-process tracing enabled by the Task-Aware MPI library
+- Add merger tool for multi-process traces named `nanos6-mergeprv`
+
+
 ## Version 2020.11.1, Tue Dec 22, 2020
 The OmpSs-2 2020.11.1 release introduces bug fixes and code improvements.
 
