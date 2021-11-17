@@ -25,7 +25,7 @@ After cloning this repository, run the following command to move to a particular
 OmpSs-2 release:
 
 ```
-$ git checkout 2020.11
+$ git checkout 2021.11
 ```
 
 Then, run the command below to download the Nanos6, Mercurium and LLVM-based compiler

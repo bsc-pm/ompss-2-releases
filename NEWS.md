@@ -3,6 +3,19 @@ All notable changes to the OmpSs-2 programming model, the Nanos6 runtime system,
 compiler, and the OmpSs-2 LLVM-based compiler will be documented in this file.
 
 
+## Version 2021.11, Wed Nov 17, 2021
+The OmpSs-2 2021.11 release introduces the support for the taskloop with the collapse clause, some performance and
+code fixes in the runtime system, and several fixes for the CTF tracing tools.
+
+### General
+- Add compiler support for the taskloop with the collapse clause
+- Set `hybrid` CPU manager policy as default
+- Fix the setting of a floating-point optimization bit in the CSR register (x86) when enabling `turbo` mode
+- Add several fixes to CTF tracing tools
+- Add support for `if(0)` and taskwaits with dependencies in fast CTF converter (`nanos6-ctf2prv-fast`)
+- Remove unnecessary warning at run-time in the NUMA-aware code
+
+
 ## Version 2021.06, Wed Jun 30, 2021
 The OmpSs-2 2021.06 release instroduces efficient support in the programming model and the runtime system for
 NUMA systems. It also enhances the taskloop construct to support data dependencies. Now the CTF instrumentation
