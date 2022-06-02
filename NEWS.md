@@ -3,6 +3,17 @@ All notable changes to the OmpSs-2 programming model, the Nanos6 runtime system,
 compiler, and the OmpSs-2 LLVM-based compiler will be documented in this file.
 
 
+## Version 2021.11.1, Fri May 27, 2022
+The OmpSs-2 2021.11.1 release introduces some bug fixes and minor improvements.
+
+### General
+- Adapt taskfor to avoid overwriting task args in compiler-generated code
+- Improve support for custom CXXFLAGS in the runtime system
+- Add `--disable-all-instrumentations` configure option in the runtime system
+- Provide `nanos6-info` with new options to show compile/link runtime flags
+- Provide `nanos6-info` with new options to show current and default config files
+
+
 ## Version 2021.11, Wed Nov 17, 2021
 The OmpSs-2 2021.11 release introduces the support for the taskloop with the collapse clause, some performance and
 code fixes in the runtime system, and several fixes for the CTF tracing tools.
