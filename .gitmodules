@@ -7,3 +7,6 @@
 [submodule "llvm"]
 	path = llvm
 	url = https://github.com/bsc-pm/llvm.git
+[submodule "ovni"]
+	path = ovni
+	url = https://github.com/bsc-pm/ovni
