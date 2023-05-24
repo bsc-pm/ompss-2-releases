@@ -1,6 +1,31 @@
 # OmpSs-2 Release Notes
-All notable changes to the OmpSs-2 programming model, the Nanos6 runtime system, the Mercurium source-to-source
-compiler, and the OmpSs-2 LLVM-based compiler will be documented in this file.
+All notable changes to the OmpSs-2 programming model and its related software will be documented in this file.
+
+
+## Version 2023.05, Wed May 24, 2023
+The OmpSs-2 2023.05 release includes new software projects and several performance and usability improvements for the OmpSs-2 programming model.
+In the context of OmpSs-2, this release introduces the new NODES runtime system supporting OmpSs-2, a novel and efficient tasking library named nOS-V, new Task-Aware libraries for interoperability with GPU offloading models, and new features in the ovni instrumentation library.
+
+### General
+- Improve support for ovni instrumentation in the Nanos6 runtime and support for the idle CPUs view
+- Add performance and usability improvements in Nanos6
+- Allow embedding hwloc library into Nanos6 to avoid conflicts with other third-party software that use different hwloc versions
+- Add support for `atomic` and `critical` OmpSs-2 directives in the LLVM/Clang compiler
+- Drop support for `task for` clause
+- Mercurium is the OmpSs-2 legacy compiler, not supported anymore, and will not provide new features for OmpSs-2. Use the LLVM/Clang compiler instead
+
+### NODES Runtime and nOS-V Tasking Library
+- Introduce the new low-level nOS-V threading and tasking library, enabling co-execution of applications
+- Introduce the new NODES runtime system, built on top of nOS-V, that supports the OmpSs-2 model. This runtime implements the `taskiter` construct and leverages directed task graphs (DCTG) to optimize the execution of iterative applications
+- Extend `-fompss-2` option from LLVM/Clang to choose between Nanos6 and NODES runtimes by accepting the option values `libnanos6` (default) and `libnodes`, respectively
+
+### Task-Aware Libraries
+- Introduce the new Task-Aware CUDA (TACUDA), Task-Aware HIP (TAHIP) and Task-Aware SYCL (TASYCL) libraries. These task-aware libraries seamlessly integrate the CUDA, HIP and SYCL APIs for GPU offloading with the OmpSs-2 and OpenMP tasking models
+- Add performance improvements and bug fixes in the Task-Aware MPI (TAMPI) and Task-Aware GASPI (TAGASPI) communication libraries
+- Extend Task-Aware MPI (TAMPI) to support ovni instrumentation and allow tracing of multi-node hyrbid MPI+OmpSs-2 applications
+
+### **ovni** Instrumentation
+- Add new graph-based design in ovni to support complex models like the new breakdown timeline
 
 
 ## Version 2022.11, Tue Nov 15, 2022

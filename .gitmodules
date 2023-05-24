@@ -9,4 +9,10 @@
 	url = https://github.com/bsc-pm/llvm.git
 [submodule "ovni"]
 	path = ovni
-	url = https://github.com/bsc-pm/ovni
+	url = https://github.com/bsc-pm/ovni.git
+[submodule "nos-v"]
+	path = nos-v
+	url = https://github.com/bsc-pm/nos-v.git
+[submodule "nodes"]
+	path = nodes
+	url = https://github.com/bsc-pm/nodes.git
