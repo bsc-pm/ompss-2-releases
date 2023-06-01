@@ -41,12 +41,14 @@ projects are the following:
 | Software     |      Version |            Individual Tag |
 | :----------- | -----------: | ------------------------: |
 | Nanos6       |          3.0 |    github-release-2023.05 |
-| Nodes        |        1.0.0 |    github-release-2023.05 |
+| NODES        |        1.0.0 |    github-release-2023.05 |
 | nOS-V        |        1.0.0 |    github-release-2023.05 |
 | ovni         |        1.2.0 |                     1.2.0 |
 | LLVM         |    17.0.0git |    github-release-2023.05 |
 | Mercurium    |       2.3.0a |    github-release-2023.05 |
 
+Check the [OmpSs-2 Release Notes](./NEWS.md) in this repository to see the changes
+introduced in each stable OmpSs-2 release.
 
 # Getting Started
 
