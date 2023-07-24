@@ -2,6 +2,26 @@
 All notable changes to the OmpSs-2 programming model and its related software will be documented in this file.
 
 
+## Version 2023.05.1, Mon Jul 24, 2023
+The OmpSs-2 2023.05.1 release includes bug fixes and documentation improvements in the Nanos6 runtime, the LLVM/OpenMP runtime, and the LLVM/Clang compiler.
+
+### Nanos6 Runtime
+- Fix CUDA kernel launch configuration and improve performance of OmpSs-2@CUDA support
+- Allow failures at CUDA prefetching without aborting the execution
+- Fix linking with jemalloc when --as-needed linking flag is used
+- Improve testing infrastructure and programs
+- Update documentation regarding OmpSs-2@CUDA support
+- Improve general documentation
+
+### LLVM/OpenMP Runtime
+- Fix OpenMP potential use-after-free in polling tasks' mechanism
+
+### LLVM/Clang Compiler
+- Fix unconditional break inside a for-loop which is encapsulated in a task
+- Fix device tasks call order when capturing more information in other clauses
+- Add support `shmem` clause in device tasks
+
+
 ## Version 2023.05, Wed May 24, 2023
 The OmpSs-2 2023.05 release includes new software projects and several performance and usability improvements for the OmpSs-2 programming model.
 In the context of OmpSs-2, this release introduces the new NODES runtime system supporting OmpSs-2, a novel and efficient tasking library named nOS-V, new Task-Aware libraries for interoperability with GPU offloading models, and new features in the ovni instrumentation library.

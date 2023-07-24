@@ -34,18 +34,18 @@ which are listed above.
 
 # Latest Stable Release
 
-The current and latest stable release is **OmpSs-2 2023.05** and its corresponding tag
-in this repository is *2023.05*. The versions and tags for each individual software
+The current and latest stable release is **OmpSs-2 2023.05.1** and its corresponding tag
+in this repository is *2023.05.1*. The versions and tags for each individual software
 projects are the following:
 
-| Software     |      Version |            Individual Tag |
-| :----------- | -----------: | ------------------------: |
-| Nanos6       |          3.0 |    github-release-2023.05 |
-| NODES        |        1.0.0 |    github-release-2023.05 |
-| nOS-V        |        1.0.0 |    github-release-2023.05 |
-| ovni         |        1.2.0 |                     1.2.0 |
-| LLVM         |    17.0.0git |    github-release-2023.05 |
-| Mercurium    |       2.3.0a |    github-release-2023.05 |
+| Software     |      Version |              Individual Tag |
+| :----------- | -----------: | --------------------------: |
+| Nanos6       |        3.0.1 |    github-release-2023.05.1 |
+| NODES        |        1.0.0 |      github-release-2023.05 |
+| nOS-V        |        1.0.0 |      github-release-2023.05 |
+| ovni         |        1.2.0 |                       1.2.0 |
+| LLVM         |    17.0.0git |    github-release-2023.05.1 |
+| Mercurium    |       2.3.0a |      github-release-2023.05 |
 
 Check the [OmpSs-2 Release Notes](./NEWS.md) in this repository to see the changes
 introduced in each stable OmpSs-2 release.
@@ -67,7 +67,7 @@ After cloning this repository, run the following command to move to a particular
 OmpSs-2 release:
 
 ```
-$ git checkout 2023.05
+$ git checkout 2023.05.1
 ```
 
 Then, run the command below to download the Nanos6, NODES, nOS-V, ovni, LLVM-based compiler
