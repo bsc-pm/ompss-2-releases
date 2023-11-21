@@ -21,6 +21,9 @@ The OmpSs-2 programming model consist of several software repositories:
   * [Task-Aware CUDA](https://github.com/bsc-pm/tacuda): Library providing support for taskifying CUDA kernels and operations
   * [Task-Aware HIP](https://github.com/bsc-pm/tahip): Library providing support for taskifying HIP kernels and operations
   * [Task-Aware SYCL](https://github.com/bsc-pm/tasycl): Library providing support for taskifying SYCL kernels and operations
+  * [Task-Aware AscendCL](https://github.com/bsc-pm/tacl): Library providing support for taskifying AscendCL kernels and operations
+* Other libraries for instrumentation:
+  * [Sonar](https://github.com/bsc-pm/sonar): Instrumentation library for parallel programming models (e.g., MPI) using the ovni library
 
 This repository contains the core software projects of the OmpSs-2 model as git submodules.
 This repository has a different git tag for each of the OmpSs-2 releases that are available.
@@ -28,24 +31,24 @@ The submodules are a link to the different software repositories and they point 
 commit that corresponds to the OmpSs-2 release. Concretely, there is a submodule for each of
 the following projects: Nanos6, NODES, nOS-V, ovni, LLVM/Clang and Mercurium (legacy).
 
-The sources of the task-aware libraries can be retrieved directly from their own repositories,
-which are listed above.
+The sources of the task-aware and Sonar libraries can be retrieved directly from their own
+repositories, which are listed above.
 
 
 # Latest Stable Release
 
-The current and latest stable release is **OmpSs-2 2023.05.1** and its corresponding tag
-in this repository is *2023.05.1*. The versions and tags for each individual software
+The current and latest stable release is **OmpSs-2 2023.11** and its corresponding tag
+in this repository is *2023.11*. The versions and tags for each individual software
 projects are the following:
 
 | Software     |      Version |              Individual Tag |
 | :----------- | -----------: | --------------------------: |
-| Nanos6       |        3.0.1 |    github-release-2023.05.1 |
-| NODES        |        1.0.0 |      github-release-2023.05 |
-| nOS-V        |        1.0.0 |      github-release-2023.05 |
-| ovni         |        1.2.0 |                       1.2.0 |
-| LLVM         |    17.0.0git |    github-release-2023.05.1 |
-| Mercurium    |       2.3.0a |      github-release-2023.05 |
+| Nanos6       |          4.0 |      github-release-2023.11 |
+| NODES        |          1.1 |      github-release-2023.11 |
+| nOS-V        |        2.1.1 |      github-release-2023.11 |
+| ovni         |        1.4.1 |                       1.4.1 |
+| LLVM         |    18.0.0git |      github-release-2023.11 |
+| Mercurium    |       2.3.0a |      github-release-2023.11 |
 
 Check the [OmpSs-2 Release Notes](./NEWS.md) in this repository to see the changes
 introduced in each stable OmpSs-2 release.
@@ -67,7 +70,7 @@ After cloning this repository, run the following command to move to a particular
 OmpSs-2 release:
 
 ```
-$ git checkout 2023.05.1
+$ git checkout 2023.11
 ```
 
 Then, run the command below to download the Nanos6, NODES, nOS-V, ovni, LLVM-based compiler

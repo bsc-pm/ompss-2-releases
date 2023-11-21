@@ -2,6 +2,71 @@
 All notable changes to the OmpSs-2 programming model and its related software will be documented in this file.
 
 
+## Version 2023.11, Wed Nov 22, 2023
+The OmpSs-2 2023.11 release includes performance and bugfixes for the runtime systems, several new features for the nOS-V tasking library, and performance improvements on the `taskiter` construct implementation. It also implements the [ALPI](https://gitlab.bsc.es/alpi/alpi) (version 1.0) in the runtime systems, which provides support for task-aware libraries. The LLVM/OpenMP includes a new OpenMP runtime called OpenMP-V (`libompv`) that works on top of the nOS-V tasking library. A new instrumentation library called [Sonar](https://github.com/bsc-pm/sonar) is provided to instrument MPI function calls through ovni.
+
+### General
+- The OmpSs-2 runtime systems expose the [ALPI](https://gitlab.bsc.es/alpi/alpi) generic low-level tasking interface
+
+### Nanos6
+- Implement the [ALPI](https://gitlab.bsc.es/alpi/alpi) interface (version 1.0)
+- Allow embedding jemalloc allocator
+- Embed hwloc and jemalloc by default
+- Add `devices.cuda.prefetch` config option to control CUDA prefetching of data dependencies (enabled by default)
+- Install the `nanos6.toml` config file in `$prefix/share`
+- Remove obsolete instrument.h public interface
+- Remove obsolete stats and graph instrumentations
+- Remove software dependency with libunwind and elfutils
+- Fix execution when enabling extrae instrumentation
+- Remove memory leaks
+- Various bugfixes and corrections
+
+### nOS-V
+- Implement the [ALPI](https://gitlab.bsc.es/alpi/alpi) interface (version 1.0)
+- Add `misc.stack_size` config option to change the stack size of nOS-V threads
+- Add `ovni.level` config option for fine-grained instrumentation control
+- Change `nosv_attach` API to not require an explicit task type and support multiple attaches
+- Implement *parallel tasks* which can be executed on multiple CPUs at once
+- Allow calling `nosv_init` and `nosv_shutdown` multiple times
+- Change error handling to return custom nOS-V error codes
+- Allow early wake of deadline tasks with `nosv_submit` passing the `NOSV_SUBMIT_DEADLINE_WAKE` flag
+- Add compatibility layer for calls to `sched_get/setaffinity` and `pthread_get/setaffinity`
+- Add instrumentation points for the `nosv_create` and `nosv_destroy` APIs
+- Various bugfixes and corrections
+
+### NODES
+- Improve performance of the `taskiter` construct
+- Fix several bugs of the `taskiter` implementation
+- Ensure nOS-V library is at the first level of dependencies
+- Use the updated attach/detach from nOS-V 2.0
+- Drop support for nOS-V versions older than 2.0
+
+### LLVM/OpenMP
+- Provide OpenMP runtime named OpenMP-V (`libompv`) working over the nOS-V tasking library (`-fopenmp=libompv`)
+- Make OpenMP-V runtime compatible with task-aware libraries
+- Drop support for task-aware libraries in vanilla OpenMP runtime `libomp`
+
+### LLVM/Clang
+- Fix task data dependencies' calculation for long double types
+
+## Ovni
+- Add `OVNI_TRACEDIR` envar to change the trace directory (default is `ovni`)
+- Add the `ovniver` program to report the libovni version and commit
+- Add `ovni_version_get()` function
+- Add nOS-V API subsystem events for `nosv_create()` and `nosv_destroy()`
+- Add TAMPI model with `T` code, subsystem events and cfgs
+- Add MPI model with `M` code, function events and cfgs
+- Don't hardcore destination directory names like lib, to use the ones in the destination host (like lib64)
+
+## Sonar
+- Introduce the [Sonar](https://github.com/bsc-pm/sonar) library that uses ovni for instrumenting MPI functions
+
+### Task-Aware Libraries
+- Leverage the [ALPI](https://gitlab.bsc.es/alpi/alpi) interface instead of the Nanos6-specific interface
+- Drop support for OmpSs-2 versions older than 2023.11
+- See other features and fixes in each task-aware libraries' CHANGELOG
+
+
 ## Version 2023.05.1, Mon Jul 24, 2023
 The OmpSs-2 2023.05.1 release includes bug fixes and documentation improvements in the Nanos6 runtime, the LLVM/OpenMP runtime, and the LLVM/Clang compiler.
 
