@@ -49,7 +49,7 @@ The OmpSs-2 2023.11 release includes performance and bugfixes for the runtime sy
 ### LLVM/Clang
 - Fix task data dependencies' calculation for long double types
 
-## Ovni
+### Ovni
 - Add `OVNI_TRACEDIR` envar to change the trace directory (default is `ovni`)
 - Add the `ovniver` program to report the libovni version and commit
 - Add `ovni_version_get()` function
@@ -58,7 +58,7 @@ The OmpSs-2 2023.11 release includes performance and bugfixes for the runtime sy
 - Add MPI model with `M` code, function events and cfgs
 - Don't hardcore destination directory names like lib, to use the ones in the destination host (like lib64)
 
-## Sonar
+### Sonar
 - Introduce the [Sonar](https://github.com/bsc-pm/sonar) library that uses ovni for instrumenting MPI functions
 
 ### Task-Aware Libraries
