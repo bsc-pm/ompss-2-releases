@@ -14,7 +14,6 @@ The OmpSs-2 programming model consist of several software repositories:
 * [nOS-V](https://github.com/bsc-pm/nos-v): A novel tasking library for efficient task execution and resource managing
 * [ovni](https://github.com/bsc-pm/ovni): A fast instrumentation library to record small execution events and generate Paraver traces
 * [LLVM/Clang](https://github.com/bsc-pm/llvm): A LLVM-based compiler that supports the OmpSs-2 directives (recommended)
-* [Mercurium](https://github.com/bsc-pm/mcxx): The source-to-source compiler supporting OmpSs-2 directives (legacy compiler)
 * Several task-aware libraries for interoperability with other programming models:
   * [Task-Aware MPI](https://github.com/bsc-pm/tampi): Library providing support for taskifying MPI communications
   * [Task-Aware GASPI](https://github.com/bsc-pm/tagaspi): Library providing support for taskifying RMA communications
@@ -29,7 +28,7 @@ This repository contains the core software projects of the OmpSs-2 model as git 
 This repository has a different git tag for each of the OmpSs-2 releases that are available.
 The submodules are a link to the different software repositories and they point to the release
 commit that corresponds to the OmpSs-2 release. Concretely, there is a submodule for each of
-the following projects: Nanos6, NODES, nOS-V, ovni, LLVM/Clang and Mercurium (legacy).
+the following projects: Nanos6, NODES, nOS-V, ovni, and LLVM/Clang.
 
 The sources of the task-aware and Sonar libraries can be retrieved directly from their own
 repositories, which are listed above.
@@ -48,7 +47,6 @@ projects are the following:
 | nOS-V        |        2.1.1 |      github-release-2023.11 |
 | ovni         |        1.4.1 |                       1.4.1 |
 | LLVM         |    18.0.0git |      github-release-2023.11 |
-| Mercurium    |       2.3.0a |      github-release-2023.11 |
 
 Check the [OmpSs-2 Release Notes](./NEWS.md) in this repository to see the changes
 introduced in each stable OmpSs-2 release.
@@ -73,8 +71,8 @@ OmpSs-2 release:
 $ git checkout 2023.11
 ```
 
-Then, run the command below to download the Nanos6, NODES, nOS-V, ovni, LLVM-based compiler
-and Mercurium sources in the `nanos6`, `nodes`, `nos-v`, `ovni`, `llvm`, and `mcxx` subfolders,
+Then, run the command below to download the Nanos6, NODES, nOS-V, ovni, and LLVM-based
+compiler sources in the `nanos6`, `nodes`, `nos-v`, `ovni`, and `llvm` subfolders,
 respectively. Those sources will be the ones that correspond to the selected release.
 
 ```
