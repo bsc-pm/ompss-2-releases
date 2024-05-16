@@ -2,6 +2,52 @@
 All notable changes to the OmpSs-2 programming model and its related software will be documented in this file.
 
 
+## Version 2024.05, Thu May 16, 2024
+The OmpSs-2 2024.05 release includes the Directory/Cache (D/C) for Host and CUDA devices in Nanos6, several new features for the nOS-V tasking library, and performance and bugfixes. The `libompv` in LLVM/OpenMP includes the implementation of OpenMP free-agents and instrumentation through ovni. This release removes the support for the Mercurium compiler.
+
+### Nanos6
+- Add directory/cache (D/C) for Host and CUDA devices
+- Add device memory allocation API for D/C-managed memory
+- Improvements to the ovni instrumentation
+
+### nOS-V
+- New batch submission API, which can accumulate tasks to submit them in batch once a certain threshold is reached
+- Add `nosv_mutex_t` and `nosv_barrier_t` as nOS-V aware alternatives to their pthread counterparts
+- Add instrumentation points for the `nosv_attach` and `nosv_detach` calls
+- Add instrumentation for parallel tasks
+- Activate the `turbo.enabled` configuration option by default, enabling flush-to-zero in x86-64 and aarch64
+- Perform safety checks when the `turbo.enabled` configuration option is set to verify FPU flags are not modified by external libraries
+- Split instrumentation events for the scheduler to allow them to be more granularly controlled
+- Allow nOS-V programs to call fork() without leaving the forked process in an incoherent state
+- Other bugfixes and improvements
+
+### NODES
+- Improve the error-handling of nOS-V return codes
+- Improve descriptiveness of ovni instrumentation
+- Various improvements related to API integrations (nOS-V, ALPI, ovni)
+
+### LLVM/OpenMP (libompv)
+- Implement the OpenMP free-agents feature by setting `OMP_ENABLE_FREE_AGENTS=1` and `OMP_WAIT_POLICY=passive`
+- Instrument through ovni by setting `OMP_OVNI=1` and enabling ovni instrumentation in nOS-V
+
+### LLVM/Clang
+- Add `OPENMP_RUNTIME` environment variable to choose the runtime library to link against
+- Other bugfixes and improvements
+
+### Ovni
+- New `ovni_thread_require`function to enable emulation models
+- Streams are marked as finished when calling `ovni_thread_free`
+- Support per-thread metadata
+- Add manual page for `ovnidump`
+- Add support for `nosv_attach` and `nosv_detach` events
+- Add support for `nosv_mutex_lock`, `nosv_mutex_trylock`, and `nosv_mutex_unlock` events
+- Add support for `nosv_barrier` events
+- Add OpenMP model to instrument the `libompv` implementation
+- Add new body model to support parallel tasks in nOS-V (`taskfor` directive)
+- Fix Paraver cfgs for Mac OS
+- Other bugfixes and improvements
+
+
 ## Version 2023.11, Wed Nov 22, 2023
 The OmpSs-2 2023.11 release includes performance and bugfixes for the runtime systems, several new features for the nOS-V tasking library, and performance improvements on the `taskiter` construct implementation. It also implements the [ALPI](https://gitlab.bsc.es/alpi/alpi) (version 1.0) in the runtime systems, which provides support for task-aware libraries. The LLVM/OpenMP includes a new OpenMP runtime called OpenMP-V (`libompv`) that works on top of the nOS-V tasking library. A new instrumentation library called [Sonar](https://github.com/bsc-pm/sonar) is provided to instrument MPI function calls through ovni.
 
