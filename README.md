@@ -2,9 +2,9 @@
 
 This meta-repository contains the official OmpSs-2 programming model's releases.
 
-* OmpSs-2 User Guide: https://pm.bsc.es/ompss-2-docs/user-guide  
-* OmpSs-2 Specification: https://pm.bsc.es/ompss-2-docs/spec  
-* OmpSs-2 Examples: https://pm.bsc.es/gitlab/ompss-2/examples  
+* OmpSs-2 User Guide: https://pm.bsc.es/ompss-2-docs/user-guide
+* OmpSs-2 Specification: https://pm.bsc.es/ompss-2-docs/spec
+* OmpSs-2 Examples: https://pm.bsc.es/gitlab/ompss-2/examples
 * OmpSs-2 Release Notes: [NEWS.md](./NEWS.md)
 
 The OmpSs-2 programming model consist of several software repositories:
@@ -36,17 +36,17 @@ repositories, which are listed above.
 
 # Latest Stable Release
 
-The current and latest stable release is **OmpSs-2 2024.05** and its corresponding tag
-in this repository is *2024.05*. The versions and tags for each individual software
+The current and latest stable release is **OmpSs-2 2024.11** and its corresponding tag
+in this repository is *2024.11*. The versions and tags for each individual software
 projects are the following:
 
 | Software     |      Version |              Individual Tag |
 | :----------- | -----------: | --------------------------: |
-| Nanos6       |          4.1 |      github-release-2024.05 |
-| NODES        |          1.2 |      github-release-2024.05 |
-| nOS-V        |        2.2.0 |      github-release-2024.05 |
-| ovni         |        1.9.1 |                       1.9.1 |
-| LLVM         |    19.0.0git |      github-release-2024.05 |
+| Nanos6       |          4.2 |      github-release-2024.11 |
+| NODES        |          1.3 |      github-release-2024.11 |
+| nOS-V        |        3.1.0 |      github-release-2024.11 |
+| ovni         |       1.11.0 |                      1.11.0 |
+| LLVM         |    20.0.0git |      github-release-2024.11 |
 
 Check the [OmpSs-2 Release Notes](./NEWS.md) in this repository to see the changes
 introduced in each stable OmpSs-2 release.
@@ -68,7 +68,7 @@ After cloning this repository, run the following command to move to a particular
 OmpSs-2 release:
 
 ```
-$ git checkout 2024.05
+$ git checkout 2024.11
 ```
 
 Then, run the command below to download the Nanos6, NODES, nOS-V, ovni, and LLVM-based

@@ -1,6 +1,47 @@
 # OmpSs-2 Release Notes
 All notable changes to the OmpSs-2 programming model and its related software will be documented in this file.
 
+## Version 2024.11, Fri Nov 15, 2024
+The OmpSs-2 2024.11 release adds support for Coroutines through the NODES runtime and the nOS-V tasking library and introduces several new features in nOS-V which include support for a task suspension API, support for RISC-V, a Topology API, and a Memory Pressure API, among others. This release also introduces support for the breakdown model through ovni and nOS-V.
+
+### Nanos6
+- Add compatibility with ALPI version 1.1 by implementing various functions from the tasking interface
+
+### nOS-V
+- Introduce support for breakdown model implementation, supported through the use of `ovniemu -b`
+- Refactor shutdown mechanism, using a coordinated approach to prevent contention during runtime shutdown
+- Introduce a Memory Pressure API, to query the current occupancy of the nOS-V shared memory segment
+- Allow re-initialization of nOS-V, permitting the call to `nosv_init()` after `nosv_shutdown()`
+- Enable `turbo` setting by default, and add correctness checking to detect changes to FPU flags from outside of nOS-V
+- Add support for coroutines and similar constructs through the `nosv_suspend()` API.
+- Add support for RISC-V
+- Introduce a Topology API, which allows the configuration of system topology through the `nosv.toml` file
+- Allow submitting tasks as `NOSV_SUBMIT_IMMEDIATE` from a task's run callback
+- Introduce `nosv_cond_t` and related calls, as a replacement for pthread condition variables
+- Other miscellaneous fixes and improvements
+
+### NODES
+- Introduce support for Coroutines
+- Fix immediate successor logic from within busy threads
+- Fix wrong header include order in the build system affecting NODES' installation
+- Other minor bug fixes and code improvements
+
+### LLVM/OpenMP (libompv)
+- Support other LLVM/Intel compiler generated code in libompv (tracing) by setting `OMP_ENABLE_COMPAT=1`
+- Other bug fixes and improvements
+
+### LLVM/Clang
+- Miscellaneous bug fixes and improvements
+
+### Ovni
+- Add breakdown model for nOS-V
+- New mark API `ovni_mark_*()` to emit user-defined events
+- New API to manage stream metadata `ovni_attr_*()`
+- Update trace format to version 3 (to support independent streams)
+
+### Task-Aware Libraries
+- Introduce TAMPI-OPT, an update for the Task-Aware MPI (TAMPI) library which implements several optimizations
+
 
 ## Version 2024.05, Thu May 16, 2024
 The OmpSs-2 2024.05 release includes the Directory/Cache (D/C) for Host and CUDA devices in Nanos6, several new features for the nOS-V tasking library, and performance and bugfixes. The `libompv` in LLVM/OpenMP includes the implementation of OpenMP free-agents and instrumentation through ovni. This release removes the support for the Mercurium compiler.
