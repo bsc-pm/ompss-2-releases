@@ -36,17 +36,17 @@ repositories, which are listed above.
 
 # Latest Stable Release
 
-The current and latest stable release is **OmpSs-2 2024.11** and its corresponding tag
-in this repository is *2024.11*. The versions and tags for each individual software
+The current and latest stable release is **OmpSs-2 2025.06** and its corresponding tag
+in this repository is *2025.06*. The versions and tags for each individual software
 projects are the following:
 
 | Software     |      Version |              Individual Tag |
 | :----------- | -----------: | --------------------------: |
-| Nanos6       |          4.2 |      github-release-2024.11 |
+| Nanos6       |          4.3 |      github-release-2025.06 |
 | NODES        |          1.3 |      github-release-2024.11 |
-| nOS-V        |        3.1.0 |      github-release-2024.11 |
-| ovni         |       1.11.0 |                      1.11.0 |
-| LLVM         |    20.0.0git |      github-release-2024.11 |
+| nOS-V        |        3.2.0 |      github-release-2025.06 |
+| ovni         |       1.12.0 |                      1.12.0 |
+| LLVM         |    20.0.0git |      github-release-2025.06 |
 
 Check the [OmpSs-2 Release Notes](./NEWS.md) in this repository to see the changes
 introduced in each stable OmpSs-2 release.
@@ -68,7 +68,7 @@ After cloning this repository, run the following command to move to a particular
 OmpSs-2 release:
 
 ```
-$ git checkout 2024.11
+$ git checkout 2025.06
 ```
 
 Then, run the command below to download the Nanos6, NODES, nOS-V, ovni, and LLVM-based

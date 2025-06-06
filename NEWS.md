@@ -1,6 +1,59 @@
 # OmpSs-2 Release Notes
 All notable changes to the OmpSs-2 programming model and its related software will be documented in this file.
 
+## Version 2025.06, Fri Jun 6, 2025
+The OmpSs-2 2025.06 release adds compatibility with ALPI v1.2 across Task-Aware libraries and runtimes, expands device support via Nanos6 and LLVM/Clang, introduces code coverage in nOS-V, and features several updates to Task-Aware libraries such as TASYCL, TACUDA, and TAMPI. It also introduces several bug fixes and improvements to the OmpSs-2 clang parser, several APIs from nOS-V, and instrumentation across libraries.
+
+### Nanos6
+- Add compatibility with [ALPI](https://gitlab.bsc.es/alpi/alpi) version 1.2.
+- Add support for the `grid` clause on CUDA tasks.
+- Weaken DLB test requirements (partial drop of tests).
+
+### nOS-V
+- Extended hwinfo API with new functionalities
+- Updated compatibility to support ALPI v1.2
+- Integrated code coverage
+- Fixed a TLS-related bug when nesting `attaches` via `fork()`
+- Fixed synchronization issues involving `nosv_cond` mutexes
+- Fixed memory consistency issues on certain architectures related to barriers in `complete_callbacks`
+- Reduced the number of instrumentation events triggered by `schedpoints` and `yields`
+- Improved detection logic and internal representation of hardware information
+- Fixed an instrumentation bug where physical CPU IDs were incorrectly emitted instead of logical IDs, leading to emulator failures
+
+### NODES
+- No relevant changes compared to the previous release
+
+### LLVM/OpenMP (libompv)
+- New, more refined implementation of the `passive` wait policy in `libompv` (`OMP_WAIT_POLICY=passive`)
+- Add a `libompvtarget`, equivalent to `libomptarget` but through `libompv`
+- Several bugfixes in the `libompv` implementation of free-agents
+
+### LLVM/Clang
+- Preliminary support for combining OmpSs-2 with OpenMP offload
+- Added suport for the `grid` clause for devices in OmpSs-2
+- Several bugfixes in the OmpSs-2 clang parser
+
+### Ovni
+- Add support OpenMP label and task ID views.
+- Add support for nOS-V non-blocking scheduler server events (VSN and VSn).
+- Add OpenMP simple breakdown view.
+- Add bench6 package to run full mini-apps for tests.
+
+### Task-Aware Libraries
+- Add compatibility with ALPI v1.2 to multiple Task-Aware libraries.
+- (TASYCL) Accept Adaptive CPP targets in the configure script.
+- (TASYCL) Expand the create queues API to accept combinations of SYCL device selectors, async exception handlers.
+- (TASYCL) Expand the API to allow executing functions on all TASYCL queues.
+- (TAMPI) Rework the polling mechanism through ALPI's new suspend feature
+- (TAMPI) Generate a PKGCONFIG file on installation
+- (TAMPI) Allow specifying the maximum number of CPUs of the system while configuring TAMPI
+- (TAMPI) Improve the logging of tests
+- (TAMPI) Fixed passing of lambdas in some boost functions to fix compatibility with v1.87.9
+- (TAMPI) Removed `cpubind` from tests to avoid unexpected behavior depending on SLURM configuration
+- (TACUDA) Allow multiple streams per CPU through the use of the `tacudaCreateStreams` parameter
+- (TACUDA) Preallocate `cudaEvent_t` objects to reduce internal CUDA library contention
+
+
 ## Version 2024.11, Fri Nov 15, 2024
 The OmpSs-2 2024.11 release adds support for Coroutines through the NODES runtime and the nOS-V tasking library and introduces several new features in nOS-V which include support for a task suspension API, support for RISC-V, a Topology API, and a Memory Pressure API, among others. This release also introduces support for the breakdown model through ovni and nOS-V.
 
