@@ -1,6 +1,47 @@
 # OmpSs-2 Release Notes
 All notable changes to the OmpSs-2 programming model and its related software will be documented in this file.
 
+## Version 2025.11, Tue Oct 28, 2025
+The OmpSs-2 2025.11 release enhances the taskiter construct through the NODES runtime and extends the APIs of the nOS-V tasking library and the LLVM Clang compiler. This improves the interaction with the attaching and detaching of threads and enhances the efficiency of the Taskiter mechanism. It also introduces several bug fixes and improvements to the NODES runtime, the nOS-V tasking library, the ovni instrumentation library, and the LLVM Clang compiler.
+
+### nOS-V
+- Support emitting hardware counter events in ovni traces
+- Print string list options if `debug.dump_config` is activated
+- Introduce `nosv_rwlock_t` and related calls, as a replacement for pthread read-write locks
+- Added `nosv_pthread_create` as a drop-in replacement for `pthread_create`, which will create, attach and instrument new threads
+- When compiled with `--enable-debug`, `nosv_mutex_t` will now perform owner checks to aid debugging nOS-V programs
+- Added common utility scripts and sample job submission files for common nOS-V configurations, which will be installed in the nOS-V `share` directory
+- Added flags `NOSV_ATTACH_INSTRUMENT` and `NOSV_DETACH_INSTRUMENT` to `nosv_attach` and `nosv_detach`, which will instruct nOS-V to instrument attached threads through ovni
+- Changed the API for pthread synchronization primitives alternatives (`nosv_cond_t`, `nosv_barrier_t` and `nosv_mutex_t`), which now returns POSIX-like error codes and has been adapted to be a drop-in substitution for pthread counterparts. Calls have been moved to a new header `nosv/compat.h`
+- The default `isolation_level` for nOS-V is now `process`, instead of `user`, which means that by default nOS-V programs will not share instances with other processes. Users should enable inter-process capabilities explicitely through the config file or using the `shared-mpi` preset
+- Fixed detection of invalid or unusable cores given in `topology.binding`
+- Fixed detection of mismatching cpu bindings between runtimes sharing the same nOS-V instance
+- Fixed the `nosv_cond` test failing under certain conditions
+
+### NODES
+- Re-implementation of the newly optimized `taskiter` construct
+- Improve usability by swapping to the use of a configuration file (`nodes.toml`) instead of environment variables
+- Add the option to build NODES with AddressSanitizer
+- Add an internal parallelization mechanism within NODES. Currently only leveraged through the `taskiter` construct
+- Deprecate `NODES_OVNI`. Although it currently overrides the new configuration file, it will be removed in a future release
+- Improve and move the documentation currently found within the `README` to a separate documentation folder
+- Fixed memory leaks related to the `TaskMetadata` class, `Taskloops`, dependencies, and `SpawnFunctions`
+- Fixed bugs regarding reductions which yielded wrong values in some scenarios
+
+### LLVM/Clang
+- Adapt to the newer nOS-V API calls
+- Several bugfixes for both OmpSs-2 constructs and OpenMP
+
+### Ovni
+- Add support for hardware counters (HWC) in nOS-V
+- Add user documentation for NODES instrumentation
+- Increase nOS-V model version to 2.6.0
+- Fix a bug in ovniemu when loading loom CPUs from multiple threads
+
+### Nanos6 and Task-Aware Libraries
+- No relevant changes compared to the previous release
+
+
 ## Version 2025.06, Fri Jun 6, 2025
 The OmpSs-2 2025.06 release adds compatibility with ALPI v1.2 across Task-Aware libraries and runtimes, expands device support via Nanos6 and LLVM/Clang, introduces code coverage in nOS-V, and features several updates to Task-Aware libraries such as TASYCL, TACUDA, and TAMPI. It also introduces several bug fixes and improvements to the OmpSs-2 clang parser, several APIs from nOS-V, and instrumentation across libraries.
 
