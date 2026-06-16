@@ -1,6 +1,39 @@
 # OmpSs-2 Release Notes
 All notable changes to the OmpSs-2 programming model and its related software will be documented in this file.
 
+## Version 2026.06, Fri Jun 19, 2026
+The OmpSs-2 2026.06 release further enhances the taskiter construct through the NODES runtime and extends the APIs of the nOS-V tasking library with new operations. This enhances developer control over task deletion and enhances the efficiency of the Taskiter mechanism. It also introduces several bug fixes and improvements to the NODES runtime, the nOS-V tasking library, the Nanos6 runtime, the TAMPI library, the ovni instrumentation library, and the LLVM Clang compiler.
+
+### nOS-V
+- Extend the API with join and wait operations
+- Add a configuration variable which enables pre-allocating the shared memory to induce benign failures
+- Fix topology NUMA test assertions
+- Improve PAPI m4 module for cross-compilation
+- Fix cross-thread shutdown ownership issues
+
+### NODES
+- Add several new fixes and enhancements to the `taskiter` construct
+- Add a new `nodes-info` command to check NODES' current version
+- Several minor bug fixes and improvements
+
+### LLVM/Clang
+- Minor fixes and performance enhancements
+- Add support for GOMP
+
+### Ovni
+- Increase nOS-V model version to 2.7.0
+- Add support for `nosv_join` events AV{jJ}
+- Add support for `nosv_join_all` events AV{mM}
+- Add support for `nosv_wait events` AV{iI}
+- Add support for `nosv_wait_all` events AV{nN}
+
+### Nanos6
+- Improve the PAPI m4 module for cross-compilation
+
+### TAMPI
+- Add minor fixes to support newer RISC-V systems
+
+
 ## Version 2025.11, Tue Oct 28, 2025
 The OmpSs-2 2025.11 release enhances the taskiter construct through the NODES runtime and extends the APIs of the nOS-V tasking library and the LLVM Clang compiler. This improves the interaction with the attaching and detaching of threads and enhances the efficiency of the Taskiter mechanism. It also introduces several bug fixes and improvements to the NODES runtime, the nOS-V tasking library, the ovni instrumentation library, and the LLVM Clang compiler.
 

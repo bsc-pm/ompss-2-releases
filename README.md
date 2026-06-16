@@ -36,17 +36,17 @@ repositories, which are listed above.
 
 # Latest Stable Release
 
-The current and latest stable release is **OmpSs-2 2025.11** and its corresponding tag
+The current and latest stable release is **OmpSs-2 2026.06** and its corresponding tag
 in this repository is *2025.06*. The versions and tags for each individual software
 projects are the following:
 
 | Software     |      Version |              Individual Tag |
 | :----------- | -----------: | --------------------------: |
-| Nanos6       |          4.3 |                 version-4.3 |
-| NODES        |        1.4.0 |      github-release-2025.11 |
-| nOS-V        |        4.0.0 |      github-release-2025.11 |
-| ovni         |       1.13.0 |                      1.13.0 |
-| LLVM         |    22.0.0git |      github-release-2025.11 |
+| Nanos6       |        4.3.1 |      github-release-2026.06 |
+| NODES        |        1.5.0 |      github-release-2026.06 |
+| nOS-V        |        4.1.0 |      github-release-2026.06 |
+| ovni         |       1.14.0 |                      1.14.0 |
+| LLVM         |    23.0.0git |      github-release-2026.06 |
 
 Check the [OmpSs-2 Release Notes](./NEWS.md) in this repository to see the changes
 introduced in each stable OmpSs-2 release.
