@@ -1,6 +1,29 @@
 # OmpSs-2 Release Notes
 All notable changes to the OmpSs-2 programming model and its related software will be documented in this file.
 
+## Version 2026.11, Mon Nov 16, 2026
+The OmpSs-2 2026.11 release extends the API of nOS-V and improves parity of the pthread compatibility API with POSIX. Additionally, NODES is now the default runtime which supports OmpSs-2, and Nanos6 is no longer bundled in the release as it is no longer maintained.
+
+### nOS-V
+- Add `nosv_sem_t` and related calls as a replacement for POSIX semaphores
+- Add `nosv_condattr_t` with `nosv_condattr_setclock`/`nosv_condattr_getclock`, and `nosv_cond_clockwait`
+- Enable branch coverage tracking
+- `nosv_cond_timedwait` now defaults to `CLOCK_REALTIME` and returns `ETIMEDOUT` on timeout, matching `pthread_cond_timedwait`
+- `nosv_barrier_wait` now returns `PTHREAD_BARRIER_SERIAL_THREAD` to exactly one unspecified thread, matching `pthread_barrier_wait`. Code relying on the previous behavior should be updated
+- Fixed spurious wakeups in `nosv_join_all`
+- Fixed hardware counters not being properly updated when yielding to another task in `nosv_mutex_unlock`
+- Added missing instrumentation flags for the join API
+- Fixed the compat header when used from C++
+- Minor debugging QoL improvements
+
+### LLVM/Clang
+- Minor fixes for libompv
+- NODES is now the default runtime for OmpSs-2
+
+### Nanos6
+- No longer maintained
+
+
 ## Version 2026.06, Fri Jun 19, 2026
 The OmpSs-2 2026.06 release further enhances the taskiter construct through the NODES runtime and extends the APIs of the nOS-V tasking library with new operations. This enhances developer control over task deletion and enhances the efficiency of the Taskiter mechanism. It also introduces several bug fixes and improvements to the NODES runtime, the nOS-V tasking library, the Nanos6 runtime, the TAMPI library, the ovni instrumentation library, and the LLVM Clang compiler.
 
